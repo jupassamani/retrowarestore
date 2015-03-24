@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails retrowarestore: development" uuid="3670a826-3da5-444f-8912-f8217aa94577">
+      <user-name>root</user-name>
+      <schema-pattern>retrowarestore_development.*</schema-pattern>
+      <default-schemas>retrowarestore_development.*</default-schemas>
+    </data-source>
+    <data-source name="Rails retrowarestore: test" uuid="e9f11a12-1ac0-4483-886e-dfcaf91fccd8">
+      <user-name>root</user-name>
+      <schema-pattern>retrowarestore_test.*</schema-pattern>
+      <default-schemas>retrowarestore_test.*</default-schemas>
+    </data-source>
+    <data-source name="Rails retrowarestore: production" uuid="6b0b9016-1375-4782-96fa-8634ec26b277">
+      <first-sync>true</first-sync>
+      <user-name>jupassamani</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddff8dfefdffedff8dfe5dffddfebdff8dfefdff9dffedfe5dff8dfefdff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+  </component>
+</project>
