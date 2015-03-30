@@ -8,7 +8,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'carrierwave'
 # Use mysql as the database for Active Record
 
-
+gem "mini_magick"
 # Use mysql as the database for Active Record
 gem 'mysql2'
 
