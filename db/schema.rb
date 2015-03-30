@@ -11,11 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(version: 20150324203908) do
-=======
-ActiveRecord::Schema.define(version: 20150324163914) do
->>>>>>> FETCH_HEAD
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
