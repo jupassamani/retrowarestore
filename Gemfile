@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.0'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+gem 'carrierwave'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets
