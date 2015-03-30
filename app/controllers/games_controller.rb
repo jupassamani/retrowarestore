@@ -25,10 +25,9 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(game_params)
-
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
+        format.html { redirect_to @game, notice: 'Game was created.' }
         format.json { render :show, status: :created, location: @game }
       else
         format.html { render :new }
@@ -42,7 +41,7 @@ class GamesController < ApplicationController
   def update
     respond_to do |format|
       if @game.update(game_params)
-        format.html { redirect_to @game, notice: 'Game was successfully updated.' }
+        format.html { redirect_to @game, notice: 'Game was updated.' }
         format.json { render :show, status: :ok, location: @game }
       else
         format.html { render :edit }
@@ -56,19 +55,20 @@ class GamesController < ApplicationController
   def destroy
     @game.destroy
     respond_to do |format|
-      format.html { redirect_to games_url, notice: 'Game was successfully destroyed.' }
+      format.html { redirect_to games_url, notice: 'Game was destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_game
       @game = Game.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:title, :release_year, :price, :description, :game_id, :poster_url)
+      params.require(:game).permit(:title, :release_year, :price, :description,
+                                   :game_id, :poster_url)
     end
 end
