@@ -4,7 +4,11 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
+<<<<<<< HEAD
   # config.secret_key = 'ae15d2ef38f85d057c6384921d87934f37bf186f912ccc4370dd2bd851e5fafe143c29fdfd1185dd62a171707b86cf4ff0f45f67c7e9e4c856d7b64c6122e509'
+=======
+  # config.secret_key = '4edd05ad68cf3cc24c5af292640927d4e58700ab3025ec289e91581f6e266ac2e6ec42e6292d16f122f4acebec3577c506cfc367451f12fc91b1823608e59a6e'
+>>>>>>> FETCH_HEAD
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -97,7 +101,11 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
+<<<<<<< HEAD
   # config.pepper = '36f0db8571a01fb860f47fb7b14238af77c3e832ce8076229ddad065daf5efd76c93c17b34150e05debe5172cecfbf9fe16b53693c34008ec07ad03694221228'
+=======
+  # config.pepper = 'dcc29dc967b3b490db8f9d856662b2c7578bef53d145c16fbbe8143107518886c2635fcb5baa3c4e9c9855ca17c49ac162f3ed16a4dfdc5681f1f5867c50f175'
+>>>>>>> FETCH_HEAD
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without

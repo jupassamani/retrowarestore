@@ -13,7 +13,11 @@
     </data-source>
     <data-source name="Rails retrowarestore: production" uuid="6b0b9016-1375-4782-96fa-8634ec26b277">
       <first-sync>true</first-sync>
+<<<<<<< HEAD
       <user-name>jupassamani</user-name>
+=======
+      <user-name>retrowarestore</user-name>
+>>>>>>> FETCH_HEAD
       <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddff8dfefdffedff8dfe5dffddfebdff8dfefdff9dffedfe5dff8dfefdff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
     </data-source>
   </component>
