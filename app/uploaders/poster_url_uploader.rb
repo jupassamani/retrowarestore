@@ -26,7 +26,7 @@ class PosterUrlUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [400, 400]
   end
 
-   def extension_white_list
-     %w(jpg jpeg gif png)
-   end
+  def extensionwhitelist
+    %w(jpg jpeg gif png)
+  end
 end
