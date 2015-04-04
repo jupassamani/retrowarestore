@@ -5,7 +5,7 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.all
+    @games = Game.order("title").page(params[:page]).per(5)
   end
 
   # GET /games/1
@@ -63,12 +63,12 @@ class GamesController < ApplicationController
 
   private
 
-  def setgame
+  def set_game
     @game = Game.find(params[:id])
   end
 
-  def gameparams
+  def game_params
     params.require(:game).permit(:title, :release_year, :price, :description,
-                                 :game_id, :poster_url)
+                                 :game_id, :poster_url, :cat_id)
   end
 end

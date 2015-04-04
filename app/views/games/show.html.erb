@@ -21,14 +21,8 @@
 </p>
 
 <p>
-  <strong>Game:</strong>
-  <%= @game.game_id %>
-</p>
-
-<p>
   <strong>Poster url:</strong>
-  <%= image_tag @game.poster_url %>
+  <%= image_tag @game.poster_url, :size=>'240x240' %>
 </p>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

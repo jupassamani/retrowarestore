@@ -6,7 +6,7 @@ gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'carrierwave'
 # Use mysql as the database for Active Record
-
+gem 'kaminari'
 gem 'mini_magick'
 gem 'rubocop', require: false
 # Use mysql as the database for Active Record
