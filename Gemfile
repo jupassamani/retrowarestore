@@ -5,13 +5,19 @@ gem 'rails', '4.2.0'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'carrierwave'
-# Use mysql as the database for Active Record
+
 gem 'kaminari'
 gem 'mini_magick'
 gem 'rubocop', require: false
-# Use mysql as the database for Active Record
+
 gem 'mysql2'
 
+gem 'less-rails'
+gem 'therubyracer'
+gem "font-awesome-rails"
+#gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
