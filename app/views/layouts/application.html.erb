@@ -60,7 +60,7 @@
        <div class="navbar-header">
          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> </button>
          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart"> <i class="fa fa-shopping-cart colorWhite"> </i> <span class="cartRespons colorWhite"> Cart ($210.00) </span> </button>
-         <a class="navbar-brand " href="index.html"> <img src="images/logo.png" alt="TSHOP"> </a> 
+         
          
          <!-- this part for mobile -->
          <div class="search-box pull-right hidden-lg hidden-md hidden-sm">
@@ -96,7 +96,8 @@
        <div class="navbar-collapse collapse">
          <ul class="nav navbar-nav">
            <li class="active"> <a href="#"> Home </a> </li>
-           
+           <li><%= link_to 'ADMIN', admin_user_session_path %></li>
+           <li><%= link_to 'ABOUT US', abouts_path %></li>
            <!-- change width of megamenu = use class > megamenu-fullwidth, megamenu-60width, megamenu-40width -->
            <li class="dropdown megamenu-80width "> <a data-toggle="dropdown" class="dropdown-toggle" href="#"> SHOP <b class="caret"> </b> </a>
              <ul class="dropdown-menu">
@@ -201,7 +202,6 @@
       <%= yield %>
     </div>
     <!--/.container--> 
-  </div>
   <!--/.featuredPostContainer-->
   
   <!--/.section-block-->

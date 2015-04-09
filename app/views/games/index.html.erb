@@ -1,5 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="row recommended">
+  
+    <h1> FEATURES PRODUCT </h1>
 
+  <div id="SimilarProductSlider">
+      <% @games.each do |game| %>
+      <div class="item">
+        <div class="product"><%= image_tag game.poster_url, :size=>'200x200' %>
+          <div class="description">
+            <h4><a href="san-remo-spaghetti"><%= game.title %></a></h4>
+            <div class="price"> <span>$<%= game.price %></span> </div>
+          </div>
+        </div>
+      </div><!--/.item-->
+    <% end %>  
+    </div>  <!--/.recommended--> 
+ <%= paginate @games %>
+</div>
+
+
+
+
+
+
+
+
+<!--
 <h1>Listing Games</h1>
 <table>
   <thead>
@@ -27,3 +52,4 @@
   </tbody>
 </table>
 
+-->
