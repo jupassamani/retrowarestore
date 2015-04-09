@@ -1,28 +1,100 @@
-<p id="notice"><%= notice %></p>
+<div class="container main-container headerOffset">  
+    <div class="row transitionfx">
 
-<p>
-  <strong>Title:</strong>
-  <%= @game.title %>
-</p>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+    	<!-- product Image and Zoom -->
+      <div class="main-image"> 
+       <%= image_tag @game.poster_url, :class =>"img-responsive" %>
+      </div>
+    </div><!--/ left column end -->
 
-<p>
-  <strong>Release year:</strong>
-  <%= @game.release_year %>
-</p>
+        <!-- right column -->
+        <div class="col-lg-6 col-md-6 col-sm-5">
 
-<p>
-  <strong>Price:</strong>
-  <%= @game.price %>
-</p>
+          <h1 class="product-title"> <%= @game.title %></h1>
+          <h3 class="product-code">Release Year : <%= @game.release_year %></h3>
+          <div class="product-price"> 
+              <span class="price-sales"> $<%= @game.price %></span>
+          </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @game.description %>
-</p>
+          <div class="details-description">
+            <p><%= @game.description %> </p>
+          </div>
 
-<p>
-  <strong>Poster url:</strong>
-  <%= image_tag @game.poster_url, :size=>'240x240' %>
-</p>
+          <div class="cart-actions">
+            <div class="addto">
+              <button onclick="productAddToCartForm.submit(this);" class="button btn-cart cart first" title="Add to Cart" type="button">Add to Cart</button>
+              <a class="link-wishlist wishlist"  >Add to Wishlist</a> </div>
 
-<%= link_to 'Back', games_path %>
+            <div style="clear:both"></div>
+
+            <h3 class="incaps"><i class="fa fa fa-check-circle-o color-in"></i> In stock</h3>
+            <h3 style="display:none" class="incaps"><i class="fa fa-minus-circle color-out"></i> Out of stock</h3>
+            <h3 class="incaps"> <i class="glyphicon glyphicon-lock"></i> Secure online ordering</h3>
+          </div>
+          <!--/.cart-actions-->
+
+          <div class="clear"></div>
+
+          <div class="product-tab w100 clearfix">
+
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#details" data-toggle="tab">Details</a></li>
+              <li> <a href="#shipping" data-toggle="tab">Shipping</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="details"><%= @game.description %></div>
+              <div class="tab-pane" id="shipping">
+                <table >
+                  <colgroup>
+                  <col style="width:33%">
+                  <col style="width:33%">
+                  <col style="width:33%">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td>Standard</td>
+                      <td>1-5 business days</td>
+                      <td>$7.95</td>
+                    </tr>
+                    <tr>
+                      <td>Two Day</td>
+                      <td>2 business days</td>
+                      <td>$15</td>
+                    </tr>
+                    <tr>
+                      <td>Next Day</td>
+                      <td>1 business day</td>
+                      <td>$30</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="3">* Free on orders of $50 or more</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+            </div> <!-- /.tab content -->
+
+          </div><!--/.product-tab-->
+
+          <div style="clear:both"></div>
+
+          <div class="product-share clearfix">
+            <p> SHARE </p>
+            <div class="socialIcon"> 
+                <a href="#"> <i  class="fa fa-facebook"></i></a> 
+                <a href="#"> <i  class="fa fa-twitter"></i></a> 
+                <a href="#"> <i  class="fa fa-google-plus"></i></a> 
+                <a href="#"> <i  class="fa fa-pinterest"></i></a> </div>
+          </div>
+          <!--/.product-share--> 
+
+        </div><!--/ right column end -->
+
+      </div>
+</div>
