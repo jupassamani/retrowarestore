@@ -45,9 +45,16 @@
            <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 no-margin no-padding">
              <div class="pull-right">
                <ul class="userMenu">
-               <li> <%= link_to edit_user_registration_path do %><span class="hidden-xs"> My Account</span> <i class="glyphicon glyphicon-user hide visible-xs "></i> <%end%></li>
+                <%if signed_in?%>
+                  <li><%=link_to current_user.email, edit_user_registration_path%></li>
+                  <li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
+                <%else%>
+                  <li><%=link_to "Register", new_user_registration_path%></li>
+                  <li><%=link_to "Login", new_user_session_path%></li>
+                <%end%>
+<!--               <li> <%= link_to edit_user_registration_path do %><span class="hidden-xs"> My Account</span> <i class="glyphicon glyphicon-user hide visible-xs "></i> <%end%></li>
                <li> <%=link_to new_user_session_path do%> <span class="hidden-xs">Sign In</span> <i class="glyphicon glyphicon-log-in hide visible-xs "></i> <%end%></li>
-               <li class="hidden-xs"> <%=link_to new_user_registration_path, alt:"Register" do%> Create Account <%end%> </li>
+               <li class="hidden-xs"> <%=link_to new_user_registration_path, alt:"Register" do%> Create Account <%end%> </li>-->
                </ul>
              </div>
            </div>
@@ -59,8 +66,9 @@
      <div class="container">
        <div class="navbar-header">
          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> </button>
-       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart"> <%= link_to cart_path do%> <i class="fa fa-shopping-cart colorWhite"> </i> <span class="cartRespons colorWhite"> Cart <%=current_user.cart_count%> </span><%end%></button>
-         
+       <%if signed_in?%>
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart"> <%= link_to cart_path do%> <i class="fa fa-shopping-cart colorWhite"> </i> <span class="cartRespons colorWhite"> Cart <%=current_user.cart_count%> </span><%end%></button>
+       <%end%>
          
          <!-- this part for mobile -->
          <div class="search-box pull-right hidden-lg hidden-md hidden-sm">
@@ -85,7 +93,11 @@
            
            <div class="miniCartFooter  miniCartFooterInMobile text-right">
              <h3 class="text-right subtotal"> Subtotal: $0 </h3>
-           <a class="btn btn-sm btn-danger"> <%= link_to cart_path do%> <i class="fa fa-shopping-cart"> </i> VIEW CART <%=current_user.cart_count%> </a> <%end%> <a class="btn btn-sm btn-primary"> CHECKOUT </a> </div>
+             <%if signed_in?%>
+              <a class="btn btn-sm btn-danger"> <%= link_to cart_path do%>
+              <i class="fa fa-shopping-cart"> </i> VIEW CART <%=current_user.cart_count%>
+              </a> <%end%> <a class="btn btn-sm btn-primary"> CHECKOUT </a> </div>
+             <%end%>
            <!--/.miniCartFooter--> 
            
          </div>
@@ -152,9 +164,11 @@
            
          <!--- this part will be hidden for mobile version -->
          <div class="nav navbar-nav navbar-right hidden-xs">
-          <%= link_to cart_path do%>
-           <i class="fa fa-shopping-cart"></i>
-+            <span>(<span class="cart-count"><%=current_user.cart_count%></span>)</span>
+          <%if signed_in?%>
+            <%= link_to cart_path do%>
+             <i class="fa fa-shopping-cart"></i>
+              <span>(<span class="cart-count"><%=current_user.cart_count%></span>)</span>
+            <%end%>
           <%end%>
              <div class="dropdown-menu col-lg-4 col-xs-12 col-md-4 ">
                <div class="w100 miniCartTable scroll-pane">

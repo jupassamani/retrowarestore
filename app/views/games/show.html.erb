@@ -23,13 +23,17 @@
 
           <div class="cart-actions">
             <div class="addto">
-              <% if $redis.sismember "cart#{current_user.id}", @game.id %>
+              <%if signed_in?%>
+                <% if $redis.sismember "cart#{current_user.id}", @game.id %>
                 <% action = "Remove from Cart"%>
                 <% link = _remove_from_cart_path(@game) %>
+              
               <% else %>
                 <% action = "Add to Cart" %>
+                <%end%>
                 <% link = add_to_cart_path(@game) %>
-               <%end%>
+
+              <%end%>
       
               <%=button_to action, link%>
              
