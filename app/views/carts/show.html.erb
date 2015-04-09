@@ -1,0 +1,22 @@
+<div id="mycart" class="small-10 small-centered medium-8 large-8 column">
+  <div class="p1 glassy-bg mb1 text-center radius-l1 radius-r1">
+    <h4>My Cart</h4>
+  </div>
+ 
+<% @cart_games.each do |game|%>
+  <div class="col-md-4 text-center">
+    <div class="thumbnail">
+      <%=link_to game do%>
+        <%=image_tag game.poster_url, class: "img-responsive"%>
+      <%end%>
+    
+      <p> <%= game.title %> </p>
+      <h4><%= number_to_currency(game.price) %></h4>
+
+      <p>
+        <%=link_to "Remove from Cart", remove_from_cart_path(game)%>
+      </p>
+    </div>
+  </div>
+<%end%>
+</div>

@@ -11,8 +11,15 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
-  end
 
+  end
+  def cart_action(current_user_id)
+       if $redis.sismember "cart#{current_user_id}", id
+         "Remove from"
+       else
+         "Add to"
+       end
+  end
   # GET /games/new
   def new
     @game = Game.new
@@ -71,4 +78,6 @@ class GamesController < ApplicationController
     params.require(:game).permit(:title, :release_year, :price, :description,
                                  :game_id, :poster_url, :cat_id)
   end
+  
+  
 end

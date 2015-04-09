@@ -17,6 +17,11 @@ gem 'therubyracer'
 gem "font-awesome-rails"
 #gem 'twitter-bootstrap-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
+
+gem 'redis', '~> 3.0.1'
+
+gem 'hiredis', '~> 0.4.5'
+
 gem 'autoprefixer-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

@@ -3,10 +3,10 @@
 
         <div class="col-lg-6 col-md-6 col-sm-6">
     	<!-- product Image and Zoom -->
-      <div class="main-image"> 
-       <%= image_tag @game.poster_url, :class =>"img-responsive" %>
-      </div>
-    </div><!--/ left column end -->
+          <div class="main-image"> 
+           <%= image_tag @game.poster_url, :class =>"img-responsive" %>
+          </div>
+        </div><!--/ left column end -->
 
         <!-- right column -->
         <div class="col-lg-6 col-md-6 col-sm-5">
@@ -23,7 +23,16 @@
 
           <div class="cart-actions">
             <div class="addto">
-              <button onclick="productAddToCartForm.submit(this);" class="button btn-cart cart first" title="Add to Cart" type="button">Add to Cart</button>
+              <% if $redis.sismember "cart#{current_user.id}", @game.id %>
+                <% action = "Remove from Cart"%>
+                <% link = _remove_from_cart_path(@game) %>
+              <% else %>
+                <% action = "Add to Cart" %>
+                <% link = add_to_cart_path(@game) %>
+               <%end%>
+      
+              <%=button_to action, link%>
+             
               <a class="link-wishlist wishlist"  >Add to Wishlist</a> </div>
 
             <div style="clear:both"></div>
@@ -83,16 +92,6 @@
           </div><!--/.product-tab-->
 
           <div style="clear:both"></div>
-
-          <div class="product-share clearfix">
-            <p> SHARE </p>
-            <div class="socialIcon"> 
-                <a href="#"> <i  class="fa fa-facebook"></i></a> 
-                <a href="#"> <i  class="fa fa-twitter"></i></a> 
-                <a href="#"> <i  class="fa fa-google-plus"></i></a> 
-                <a href="#"> <i  class="fa fa-pinterest"></i></a> </div>
-          </div>
-          <!--/.product-share--> 
 
         </div><!--/ right column end -->
 
