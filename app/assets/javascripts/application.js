@@ -13,9 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-// require turbolinks
+//= require turbolinks
 // require_tree .
-
 $(window).load ->
   $('a[data-target]').click (e) ->
     e.preventDefault()

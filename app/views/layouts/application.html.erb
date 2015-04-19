@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Retrowarestore" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Retroware Store" %></title>
     <%= csrf_meta_tags %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -52,9 +52,6 @@
                   <li><%=link_to "Register", new_user_registration_path%></li>
                   <li><%=link_to "Login", new_user_session_path%></li>
                 <%end%>
-<!--               <li> <%= link_to edit_user_registration_path do %><span class="hidden-xs"> My Account</span> <i class="glyphicon glyphicon-user hide visible-xs "></i> <%end%></li>
-               <li> <%=link_to new_user_session_path do%> <span class="hidden-xs">Sign In</span> <i class="glyphicon glyphicon-log-in hide visible-xs "></i> <%end%></li>
-               <li class="hidden-xs"> <%=link_to new_user_registration_path, alt:"Register" do%> Create Account <%end%> </li>-->
                </ul>
              </div>
            </div>
@@ -64,12 +61,22 @@
      <!--/.navbar-top-->
      
      <div class="container">
-       <div class="navbar-header">
-         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> </button>
-       <%if signed_in?%>
-         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart"> <%= link_to cart_path do%> <i class="fa fa-shopping-cart colorWhite"> </i> <span class="cartRespons colorWhite"> Cart <%=current_user.cart_count%> </span><%end%></button>
-       <%end%>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> </button>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart"><%= link_to cart_path do%> <i class="fa fa-shopping-cart colorWhite"> </i><span>(<span class="cartRespons colorWhite"> </span>)</span>  <%end%></button>
+<!--            <a class="navbar-brand " href="index.html"> <img src="images/logo.png" alt="RETROWARE"> </a> -->
+      
+          <!-- this part for mobile -->
+          <div class="search-box pull-right hidden-lg hidden-md hidden-sm">
+            <div class="input-group">
+              <button class="btn btn-nobg getFullSearch" type="button"> <i class="fa fa-search"> </i> </button>
+            </div>
+            <!-- /input-group --> 
+
+          </div>
+        </div>
          
+<!--         <a class="navbar-brand " href="index.html"> <img src="images/logo.png" alt="TSHOP"> </a> -->
          <!-- this part for mobile -->
          <div class="search-box pull-right hidden-lg hidden-md hidden-sm">
            <div class="input-group">
@@ -80,24 +87,28 @@
          </div>
        </div>
        
+       
        <!-- this part is duplicate from cartMenu  keep it for mobile -->
        <div class="navbar-cart  collapse">
          <div class="cartMenu  col-lg-4 col-xs-12 col-md-4 ">
            <div class="w100 miniCartTable scroll-pane">
              <table  >
                <tbody>
+                  <tr class="miniCartProduct">
+                    <td style="20%" class="miniCartProductThumb"><div> <a href="product-details.html"> </a> </div></td>
+                    <td style="40%"><div class="miniCartDescription">
+                    <h4> <a href="product-details.html">  </a> </h4>
+                    <div class="price"> <span> $ </span> </div>
+                  </div></td>
+                    <td  style="10%" class="miniCartQuantity"><a > X 1 </a></td>
+                    <td  style="5%" class="delete">x</td>
+                  </tr>
+                
                </tbody>
              </table>
            </div>
            <!--/.miniCartTable-->
-           
-           <div class="miniCartFooter  miniCartFooterInMobile text-right">
-             <h3 class="text-right subtotal"> Subtotal: $0 </h3>
-             <%if signed_in?%>
-              <a class="btn btn-sm btn-danger"> <%= link_to cart_path do%>
-              <i class="fa fa-shopping-cart"> </i> VIEW CART <%=current_user.cart_count%>
-              </a> <%end%> <a class="btn btn-sm btn-primary"> CHECKOUT </a> </div>
-             <%end%>
+
            <!--/.miniCartFooter--> 
            
          </div>
@@ -107,7 +118,7 @@
        
        <div class="navbar-collapse collapse">
          <ul class="nav navbar-nav">
-           <li class="active"> <%= link_to 'HOME', root_path  %> </li>
+           <li> <%= link_to 'HOME', root_path  %> </li>
            <li><%= link_to 'ADMIN', admin_user_session_path %></li>
            <li><%= link_to 'ABOUT US', abouts_path %></li>
            <!-- change width of megamenu = use class > megamenu-fullwidth, megamenu-60width, megamenu-40width -->
@@ -263,9 +274,9 @@
           <h3> Support </h3>
           <ul>
             <li class="supportLi">
-              <p> Lorem ipsum dolor sit amet, consectetur </p>
+              <p> For support, contact us! </p>
               <h4> <a class="inline" href="callto:+8801680531352"> <strong> <i class="fa fa-phone"> </i> 88 01680 531352 </strong> </a> </h4>
-              <h4> <a class="inline" href="mailto:help@tshopweb.com"> <i class="fa fa-envelope-o"> </i> help@tshopweb.com </a> </h4>
+              <h4> <a class="inline" href="mailto:help@retroware.com"> <i class="fa fa-envelope-o"> </i> help@retroware.com </a> </h4>
             </li>
           </ul>
         </div>
