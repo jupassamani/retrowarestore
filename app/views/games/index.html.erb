@@ -1,3 +1,49 @@
+<div class="container main-container headerOffset globalPaddingBottom"> 
+  
+  <!-- Main component call to action -->
+  <div class=" image-show-case-wrapper center-block relative col-lg-12">
+    <div id="imageShowCase" class="owl-carousel owl-theme">
+      <div class="product-slide">
+        <a href="#"><img class="img-responsive" src="images/site/homeImage.jpg" alt="img"></a> </div>
+      <!-- /.product-slide  -->
+      
+    </div>
+    <!--/#imageShowCase -->
+    
+    <div style="clear:both;"></div>
+  <!--/.image-show-case-wrapper -->
+  
+  <div style="clear:both"></div>
+  <div class="col-lg-12">
+    <hr class="hr3">
+  </div>
+  <div class="row featuredPostContainer ">
+    <div class="featuredImageLook3 col-lg-12">
+    <% @categories.each do |category| %>
+      <div class="col-md-4 col-sm-6 col-xs-6 col-xs-min-12">
+        <div class="inner">
+          <div class="box-content-overly box-content-overly-white">
+            <div class="box-text-table">
+              <div class="box-text-cell ">
+                <div class="box-text-cell-inner dark">
+                  <h1 class="uppercase"><%= category.cat_name %></h1>
+                  <p>Order original Nintendo NES game cartridges, new and refurbished consoles, classic controllers and complete games</p>
+                  <hr class="submini">
+                  <a class="btn btn-inverse" <%= link_to "SHOP NOW", category %></a> </div>
+              </div>
+            </div>
+          </div>
+          <div class="img-title"> <%= category.cat_name %></div>
+        <a class="img-block" href="#"> <img class="img-responsive" <%= image_tag category.image %></a>
+          </div>
+          </div>
+        <% end %>
+    </div>
+    <!--/.featuredImageLook3--> 
+  </div>
+  <!--/.featuredPostContainer--> 
+</div>
+
 <div class="row recommended">
   
     <h1> FEATURES PRODUCT </h1>

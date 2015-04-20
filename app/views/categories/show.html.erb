@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Cat name:</strong>
-  <%= @category.cat_name %>
+  <strong>Cat name:</strong> <%= @category.cat_name %>
+  <% @games.each do |game| %>
+    <br><%=game.title%>
+    <% end %>
 </p>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+

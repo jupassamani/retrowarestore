@@ -4,6 +4,7 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.order('title').page(params[:page]).per(5)
+    @categories = Category.all
   end
 
   def show

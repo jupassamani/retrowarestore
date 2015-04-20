@@ -11,11 +11,11 @@
   </thead>
 
   <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.cat_name %></td>
-        <td><%= link_to 'Show', category %></td>
-      </tr>
+    <% @category.games.each do |game| %>
+        <p>
+            <b>Games:</b>
+            <%= game.title %>
+        </p>
     <% end %>
   </tbody>
 </table>

@@ -1,3 +1,3 @@
 ActiveAdmin.register Category do
-  permit_params :cat_name
+  permit_params :cat_name, :image
 end

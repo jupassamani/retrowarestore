@@ -9,12 +9,14 @@ Rails.application.routes.draw do
   
   resources :abouts
 
-  resources :categories
-
+  #resources :categories 
+    
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
   resources :games
   root to: 'games#index'
-
+  get "categories/:id" => "categories#show", as: 'category'
+  #get "search" => "search#index", as: 'search_index'
+  get "search" => "search#result", as:'search_result'
 end

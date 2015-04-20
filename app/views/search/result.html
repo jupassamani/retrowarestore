@@ -1,0 +1,8 @@
+
+    <% if @games.count == 0 %>
+        <br> No game found :(
+    <%end %>
+    <% @games.each do |game| %>
+    <br> <%= game.title %>
+    <% end %>
+        
