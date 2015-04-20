@@ -11,6 +11,7 @@ class CategoriesController < ApplicationController
 
     def show
       @category = Category.find(params[:id])
-      @games = Game.where(category_id: @category.id)    
+      @games = Game.where(category_id: @category.id)   
+      @categories = Category.all
     end
 end

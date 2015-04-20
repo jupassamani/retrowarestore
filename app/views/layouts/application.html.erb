@@ -127,47 +127,13 @@
                <li class="megamenu-content"> 
                  
                  <!-- megamenu-content -->
-                 
+                 <% @categories.each do |category| %>
                  <ul class="col-lg-2  col-sm-2 col-md-2  unstyled noMarginLeft">
                    <li>
-                     <p> <strong> Nintendo NES </strong> </p>
+                     <p><strong> <%= link_to category.cat_name, category %> </strong> </p>
                    </li>
-                   <li> <a href="#"> Consoles </a> </li>
-                   <li> <a href="#"> Controllers </a> </li>
-                   <li> <a href="#"> Games </a> </li>
                  </ul>
-                 <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
-                    <li>
-                     <p> <strong> Nintendo 64 </strong> </p>
-                   </li>
-                   <li> <a href="#"> Consoles </a> </li>
-                   <li> <a href="#"> Controllers </a> </li>
-                   <li> <a href="#"> Games </a> </li>
-                 </ul>
-                 <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
-                   <li>
-                     <p> <strong> Play One </strong> </p>
-                   </li>
-                   <li> <a href="#"> Consoles </a> </li>
-                   <li> <a href="#"> Controllers </a> </li>
-                   <li> <a href="#"> Games </a> </li>
-                 </ul>
-                <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
-                   <li>
-                     <p> <strong> Xbox </strong> </p>
-                   </li>
-                   <li> <a href="#"> Consoles </a> </li>
-                   <li> <a href="#"> Controllers </a> </li>
-                   <li> <a href="#"> Games </a> </li>
-                 </ul>
-                   <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
-                   <li>
-                     <p> <strong> Sega Genisis </strong> </p>
-                   </li>
-                   <li> <a href="#"> Consoles </a> </li>
-                   <li> <a href="#"> Controllers </a> </li>
-                   <li> <a href="#"> Games </a> </li>
-                 </ul>
+                <% end %>
                </li>
              </ul>
            </li>
@@ -201,13 +167,6 @@
            </div>
            <!--/.cartMenu-->
            
-           <div class="search-box">
-             <div class="input-group">
-               <button class="btn btn-nobg getFullSearch" type="button"> <i class="fa fa-search"> </i> </button>
-             </div>
-             <!-- /input-group --> 
-             
-           </div>
            <!--/.search-box --> 
          </div>
          <!--/.navbar-nav hidden-xs--> 
@@ -217,13 +176,6 @@
      </div>
      <!--/.container -->
      
-     <div class="search-full text-right"> <a class="pull-right search-close"> <i class=" fa fa-times-circle"> </i> </a>
-       <div class="searchInputBox pull-right">
-         <input type="search"  data-searchurl="search?=" name="q" placeholder="start typing and hit enter to search" class="search-input">
-         <button class="btn-nobg search-btn" type="submit"> <i class="fa fa-search"> </i> </button>
-       </div>
-     </div>
-     <!--/.search-full--> 
      
    </div>
     <div class="container main-container" style="padding-top:140px"> 

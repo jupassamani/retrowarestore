@@ -8,6 +8,7 @@ class GamesController < ApplicationController
   end
 
   def show
+    @categories = Category.all
   end
   
   def cart_action(current_user_id)

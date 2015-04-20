@@ -4,6 +4,7 @@ class CartsController < ApplicationController
   def show
     cart_ids = $redis.smembers current_user_cart
     @cart_games = Game.find(cart_ids)
+    @categories = Category.all
   end
  
   def add

@@ -1,8 +1,12 @@
 # Abouts Controller
-class AboutsController < InheritedResources::Base
-  private
+class AboutsController < ApplicationController
 
     def about_params
       params.require(:about).permit(:content)
     end
+    def index
+      @categories = Category.all
+      @abouts = About.all    
+    end
+
 end

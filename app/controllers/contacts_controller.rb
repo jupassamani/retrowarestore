@@ -1,6 +1,10 @@
 # Contacts Controller
-class ContactsController < InheritedResources::Base
-  private
+class ContactsController < ApplicationController
+    
+    def index
+      @categories = Category.all
+      @contacts = Contact.all    
+    end
 
     def contact_params
       params.require(:contact).permit(:content, :phone, :email, :lat, :lng)
