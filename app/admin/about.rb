@@ -1,3 +1,3 @@
-  ActiveAdmin.register About do
-    permit_params :content
+ActiveAdmin.register About do
+  permit_params :content
 end

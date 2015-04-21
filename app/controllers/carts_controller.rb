@@ -6,19 +6,19 @@ class CartsController < ApplicationController
     @cart_games = Game.find(cart_ids)
     @categories = Category.all
   end
- 
+
   def add
     $redis.sadd current_user_cart, params[:game_id]
     redirect_to cart_path
   end
- 
+
   def remove
     $redis.srem current_user_cart, params[:game_id]
     redirect_to cart_path
   end
- 
+
   private
- 
+
   def current_user_cart
     "cart#{current_user.id}"
   end
