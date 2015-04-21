@@ -25,7 +25,8 @@ ActiveRecord::Schema.define(version: 201_504_200_013_41) do
             name: 'index_active_admin_comments_on_namespace',
             using: :btree
   add_index 'active_admin_comments', %w(resource_type, resource_id),
-            name: 'index_active_admin_comments_on_resource_type_and_resource_id',
+            name:
+            'index_active_admin_comments_on_resource_type_and_resource_id',
             using: :btree
 
   create_table 'admin_users', force: :cascade do |t|

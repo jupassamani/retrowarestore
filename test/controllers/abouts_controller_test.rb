@@ -36,7 +36,8 @@ class AboutsControllerTest < ActionController::TestCase
   end
 
   test 'should update about' do
-    patch :update, id: @about,
+    patch :update,
+          id: @about,
           about: { content: @about.content, image: @about.image }
     assert_redirected_to about_path(assigns(:about))
   end

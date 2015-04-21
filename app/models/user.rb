@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def cart_count
-    $redis.scard "cart#{id}"
+    Redis.current.scard "cart#{id}"
   end
 end
