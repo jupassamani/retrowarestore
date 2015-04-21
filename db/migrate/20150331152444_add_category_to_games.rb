@@ -1,3 +1,4 @@
+# Add Category
 class AddCategoryToGames < ActiveRecord::Migration
   def change
     add_reference :games, :category, index: true

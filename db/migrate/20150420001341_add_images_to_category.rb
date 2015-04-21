@@ -1,3 +1,4 @@
+# Add Images
 class AddImagesToCategory < ActiveRecord::Migration
   def change
     add_column :categories, :image, :string

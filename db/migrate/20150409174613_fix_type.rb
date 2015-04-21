@@ -1,3 +1,4 @@
+# FixType
 class FixType < ActiveRecord::Migration
   def change
     change_table :contacts do |t|
