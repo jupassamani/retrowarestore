@@ -16,7 +16,7 @@ class CategoriesController < ApplicationController
   end
 
   def cart_action(current_user_id)
-    if Redis.current.sismember "cart#{current_user_id}", id
+    if $redis.current.sismember "cart#{current_user_id}", id
       'Remove from'
     else
       'Add to'

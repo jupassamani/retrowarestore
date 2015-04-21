@@ -1,4 +1,4 @@
-<div class="container main-container headerOffset">  
+<div>
     <div class="row transitionfx">
 
         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -24,7 +24,7 @@
           <div class="cart-actions">
             <div class="addto">
               <%if signed_in?%>
-                <% if $redis.sismember "cart#{current_user.id}", @game.id %>
+                <% if Redis.current.sismember "cart#{current_user.id}", @game.id %>
                 <% action = "Remove from Cart"%>
                 <% link = _remove_from_cart_path(@game) %>
               
@@ -36,8 +36,6 @@
               <%end%>
       
               <%= button_to action, link %>
-             
-              <a class="link-wishlist wishlist"  >Add to Wishlist</a> </div>
 
             <div style="clear:both"></div>
 

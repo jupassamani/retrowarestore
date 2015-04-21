@@ -1,10 +1,11 @@
 
-<h2>My Cart</h2> 
+<h2>My Cart</h2>
+<div class="container">
 <% @cart_games.each do |game|%>
   <div class="col-md-4 text-center">
     <div class="thumbnail">
       <%=link_to game do%>
-        <%=image_tag game.poster_url, :size=>'100%x100%'%>
+        <%=image_tag game.poster_url, :class =>"img-responsive" %>
       <%end%>
     
       <p> <%= game.title %> </p>
@@ -16,4 +17,4 @@
     </div>
   </div>
 <%end%>
-
+</div>

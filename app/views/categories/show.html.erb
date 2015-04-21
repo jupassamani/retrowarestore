@@ -21,7 +21,7 @@
             <div class="cart-actions">
             <div class="addto">
               <%if signed_in?%>
-                <% if $redis.sismember "cart#{current_user.id}", game.id %>
+                <% if Redis.current.sismember "cart#{current_user.id}", game.id %>
                 <% action = "Remove from Cart"%>
                 <% link = _remove_from_cart_path(game) %>
               
